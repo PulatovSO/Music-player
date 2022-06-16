@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e5e5e5;
+    overflow: hidden;
+}
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+
+.App {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    row-gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.display-none {
+    display: none;
+}
+
+.library-open {
+    left: 0;
+}
+
+
+/*********** Input range styling ***********/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+    outline: none;
+}
+  
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #ff7b00;
+    border-radius: 0px;
+    height: 1.5px;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -8px; /* Centers thumb on the track */
+    background-color: #e66f00;
+    border-radius: 4.5px;
+    height: 17.5px;
+    width: 9.5px;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+    background-color: #ff7b00;
+    border-radius: 0px;
+    height: 1.5px;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+    background-color: #e66f00;
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 4.5px;
+    height: 17.5px;
+    width: 9.5px;
+}
+
+input[type="range"]:focus::-moz-range-thumb{
+    outline: 3px solid #e66f00;
+    outline-offset: 0.125rem;
+}
+
+
+// scrollbar style ============================
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(154, 154, 154);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

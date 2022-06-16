@@ -1,0 +1,111 @@
+.library {
+    padding-top: 20px;
+    width: 300px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -330px;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  5px 5px 10px #bebebe,
+                 -5px -5px 10px #ffffff;
+    z-index: 100;
+
+    &__title {
+        padding-left: 20px;
+        margin-bottom: 30px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        overflow-y: scroll;
+    }
+
+    &__btn {
+        position: absolute; 
+        top: 15px;
+        right: 20px;
+    }
+}
+
+.song {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    column-gap: 10px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+    &__image {
+        width: 40px;
+        height: 40px;
+    }
+
+    &__name {
+        font-size: 14px;
+    }
+
+    &__author {
+        font-size: 12px;
+        font-weight: lighter;
+    }
+}
+
+.arrow-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    box-shadow: 10px 10px 32px -5px rgba(174, 174, 192, 0.5), -10px -10px 26px -5px #FFFFFF;
+}
+
+.library-open {
+    left: 0;
+}
+
+// responsiveness ===============================
+// mobile devieces
+@media screen and (max-width: 768px){
+    .library {
+        width: 100%;
+        left: -110%;
+    }
+
+    .library-open {
+        left: 0;
+    }
+
+    .song {
+        column-gap: 15px;
+    
+        &__image {
+            width: 60px;
+            height: 60px;
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            row-gap: 3px;
+        }
+    
+        &__name {
+            font-size: 18px;
+        }
+    
+        &__author {
+            font-size: 16px;
+            font-weight: lighter;
+        }
+    }
+}
