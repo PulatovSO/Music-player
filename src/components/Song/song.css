@@ -1,0 +1,41 @@
+.info__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info__cover {
+  margin-bottom: 32px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  -webkit-box-shadow: 32px 32px 64px #bebebe, -32px -32px 64px #ffffff;
+          box-shadow: 32px 32px 64px #bebebe, -32px -32px 64px #ffffff;
+}
+
+.info__name {
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 0.005em;
+}
+
+.info__singer {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.045em;
+}
+/*# sourceMappingURL=song.css.map */

@@ -1,28 +1,20 @@
 import React, { useRef, useState } from 'react';
 import './player.scss';
-
 import forward from '../../assets/images/forward.svg';
 import backward from '../../assets/images/backward.svg';
 import play from '../../assets/images/play.svg';
 import pause from '../../assets/images/pause.svg';
-import menu from '../../assets/images/menu.svg';
 
 const Player = ({ 
     currentSong, 
-    setCurrentSong, 
     isPlaying, 
-    setIsPlaying
+    audioRef,
+    playSongHandler,
+    next,
+    prev
 }) => {
 
-    // player control
-    const audioRef = useRef(null)
-
-    const playSongHandler = () => {
-        if (isPlaying) audioRef.current.pause();
-        else audioRef.current.play();            
-        setIsPlaying(!isPlaying);
-    }
-
+    // timing control
     const trackTiming = (e) => {
         audioRef.current.currentTime = e.target.value
         setSongInfo({...songInfo, currentTime: e.target.value})
@@ -67,22 +59,22 @@ const Player = ({
                     onChange={trackTiming}
                     className='time__range' 
                     type="range" 
-                    max={songInfo.duration}
+                    max={songInfo.duration ? songInfo.duration : 0}
                     min={0}
                     value={songInfo.currentTime}
                 />
-                <p className='time__end'>{getTime(songInfo.duration)}</p>
+                <p className='time__end'>{getTime(songInfo.duration) ? getTime(songInfo.duration) : '00:00'}</p>
             </div>
 
             <div className="controls">
-                <button className="controls-prev__btn btn">
+                <button className="controls-prev__btn btn" name='prev' onClick={(e) => prev()}>
                     <img className='controls__prev-icon' src={backward} alt="backward" />
                 </button>
                 <button className="controls-play__btn btn" onClick={playSongHandler}>
                     <img className={ isPlaying ? 'controls__play-icon display-none' : 'controls__play-icon'} src={play} alt="play" />
                     <img className={ isPlaying ? 'controls__play-icon' : 'controls__play-icon display-none'} src={pause} alt="pause" />
                 </button>
-                <button className="controls-next__btn btn">
+                <button className="controls-next__btn btn" name='next' onClick={(e) => next()} >
                     <img className='controls__next-icon' src={forward} alt="forward" />
                 </button>
             </div>
@@ -97,7 +89,6 @@ const Player = ({
                 />
                 <span><i className='bx bxs-volume-full'></i></span>
             </div>
-
 
             <audio 
                 onTimeUpdate={timeUpdateHandler} 
